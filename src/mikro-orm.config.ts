@@ -1,4 +1,5 @@
 import {Post} from "./entities/Post";
+import { User } from "./entities/User";
 import { __prod__ } from "./constats";
 import { MikroORM} from "@mikro-orm/core";
 // @ts-ignore
@@ -9,7 +10,7 @@ export default {
         path: path.join(__dirname, "./migrations"), // path to the folder with migrations
         pattern: /^[\w-]+\d+\.[tj]s$/, // regex pattern for the migration files
     },
-    entities: [Post],
+    entities: [Post, User],
     dbName: 'lireddit',
     user: 'root',
     password: '',
